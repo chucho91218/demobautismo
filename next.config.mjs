@@ -1,16 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export', // Esto genera la carpeta 'out'
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
+    unoptimized: true, // Obligatorio para que las imágenes funcionen en Cloudflare
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
